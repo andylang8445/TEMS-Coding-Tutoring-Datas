@@ -3,40 +3,54 @@
 # You can adjust the weights and number of testing
 int_test = 10
 int_test_weight = 10
-double_test = 10
-double_test_weight = 15
+duplicate_test = 10
+duplicate_test_weight = 15
 int_correct_count = 0
-double_correct_count = 0
+duplicate_correct_count = 0
+list_length_between = (20, 100)
 Mark = 0
-Total_Mark = int_test_weight + double_test_weight
+Total_Mark = int_test_weight + duplicate_test_weight
 
-from Student_submit import p3SumTwoNum
+from Student_submit import searcher
 import random
 for i in range(int_test):
-    a = random.randrange(1, 90000)
-    b = random.randrange(1, 90000)
-    student_Ans = p3SumTwoNum(a, b)
-    if student_Ans == (a+b):
+    li = list()
+    for j in range(random.randrange(list_length_between[0], list_length_between[1])):
+        tmp = random.randrange(-90000, 90000)
+        if tmp not in li:
+            li.append(tmp)
+    li.sort()
+    data = li[random.randrange(0, len(li))]
+    student_Ans = searcher(li, data)
+    print("Original list: ", li,", Looking for ", data)
+    print("\tIndex: ", student_Ans, ", pointing at ", li[student_Ans])
+    if li[student_Ans] == data:
         int_correct_count += 1
-
-for i in range(double_test):
-    a = random.randrange(1, 90000)/100
-    b = random.randrange(1, 90000)/100
-    student_Ans = p3SumTwoNum(a, b)
-    if student_Ans == (a+b):
-        double_correct_count += 1
+print("===================")
+for i in range(duplicate_test):
+    li = []
+    for j in range(random.randrange(list_length_between[0], list_length_between[1])):
+        tmp = random.randrange(-90000, 90000)
+        li.append(tmp)
+    li.sort()
+    data = li[random.randrange(0, len(li))]
+    student_Ans = searcher(li, data)
+    print("Original list: ", li,", Looking for ", data)
+    print("\tIndex: ", student_Ans, ", pointing at ", li[student_Ans])
+    if li[student_Ans] == data:
+        duplicate_correct_count += 1
 
 Mark = (int_correct_count/int_test)*int_test_weight
-Mark += (double_correct_count/double_test)*double_test_weight
+Mark += (duplicate_correct_count/duplicate_test)*duplicate_test_weight
 
 if int_correct_count == int_test:
     print("Integer Handeling Pass")
 else:
     print("Integer Handeling Fail - Correct:",int_correct_count,"/",int_test)
-if double_correct_count == double_test:
-    print("Double Handeling Pass")
+if duplicate_correct_count == duplicate_test:
+    print("Duplicate Handeling Pass")
 else:
-    print("Double Handeling Fail - Correct:",double_correct_count,"/",double_test)
+    print("Duplicate Handeling Fail - Correct:",duplicate_correct_count,"/",duplicate_test)
 
 if Mark >= Total_Mark:
     print("All test Pass")

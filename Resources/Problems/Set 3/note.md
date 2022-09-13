@@ -5,6 +5,3 @@
 ## Function
 * Problem 3
 * Problem 4
-## Combinational Problems
-* Problem 5
-* Problem 6

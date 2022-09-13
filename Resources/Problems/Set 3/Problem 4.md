@@ -1,25 +1,25 @@
 # Set 3
 ## Problem 4 - Function
-Create a function that adds two numbers and return the sum. Name that function p3SumTwoNum.
+Create a search function that returns the index of the integer data when the sorted list that you are looking from and the data is given.<br>Assume there can be duplicates in the list and the data you are looking for is <b>always</b> present in the list.
 
 ### Sample Case 1
 <b>Sample parameters:</b><br>
 <i>
-1, 99
+[1, 99, 198, 294, 300], 198
 </i>
 <br>
 <b>Sample return:</b><br>
 <i>
-100<br>
+2<br>
 </i>
 
 ### Sample Case 2
 <b>Sample parameters:</b><br>
 <i>
-123.9, 100
+[-18937, 38, 98, 374, 374, 1000, 1000, 1000 ,3000], 1000
 </i>
 <br>
 <b>Sample return:</b><br>
 <i>
-223.9
+any of 5, 6, 7 are accepted
 </i>
