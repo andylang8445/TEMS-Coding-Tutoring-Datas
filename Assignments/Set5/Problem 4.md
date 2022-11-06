@@ -15,7 +15,7 @@ Create a function that returns the maximum number of meeting that can happen con
 4<br>
 </i>
 <b>hint</b><br>
-<i>(1,4), (5,7), (8,11), (12,14)</i> these are the usable slots
+<i>[1, 4], [5, 7], [8, 11], [12, 14]</i> these are the usable slots
 
 ### Sample Case 2
 <b>Sample parameter:</b><br>
@@ -27,6 +27,8 @@ Create a function that returns the maximum number of meeting that can happen con
 <i>
 3<br>
 </i>
+<b>hint</b><br>
+<i>[326, 681], [812, 825], [912, 1048]</i> these are the usable slots
 
 ### Sample Case 3
 <b>Sample parameter:</b><br>
@@ -38,3 +40,5 @@ Create a function that returns the maximum number of meeting that can happen con
 <i>
 1<br>
 </i>
+<b>hint</b><br>
+<i>any of the list</i> is the usable slots
